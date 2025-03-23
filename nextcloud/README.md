@@ -1,6 +1,9 @@
 ### Nextcloud (nextcloud.yaml)
 https://artifacthub.io/packages/helm/nextcloud/nextcloud
 
+if external database is configured nextcloud will automaticlly
+create apropriate database (e.g. download necessary postgresql chart)
+
 kubectl config set-context --current --namespace=nextcloud
 
 kubectl create secret generic nextcloud-secret \
@@ -16,11 +19,3 @@ helm install nextcloud nextcloud/nextcloud -n nextcloud -f nextcloud.yaml
 helm upgrade nextcloud nextcloud/nextcloud -f nextcloud.yaml
 
 kubectl port-forward svc/nextcloud 8080:8080 -n nextcloud
-
----
-### postgress (postgress.yaml)
-https://artifacthub.io/packages/helm/bitnami/postgresql
-
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm install postgress bitnami/postgresql -f postgress.yaml
-helm upgrade postgress bitnami/postgresql -f postgress.yaml

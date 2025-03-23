@@ -11,10 +11,25 @@ nextcloud:
   host: nextcloud.localhost.com
 
   # user (username, password) = (admin, changme) by default
-  #
-  # existingSecret.usernameKey:
-  # nextcloud.username	User of the application	admin
-  # nextcloud.password	Application password	changeme
-  # nextcloud.existingSecret.enabled	Whether to use an existing secret or not	false
-  # nextcloud.existingSecret.secretName	Name of the existing secret	nil
-  # nextcloud.existingSecret.usernameKey	Name of the key that contains the username	nil
+
+internalDatabase:
+  enabled: true
+
+# externalDatabase:
+#   enabled: false
+#   type: postgresql
+#   database: nextcloud_db
+#   # 5432 is default port for postgresql
+#   host: nextcloud_db.nextcloud.svc.cluster.local:5432
+#
+#   user: nextcloud
+#   password: nextcloud_testing
+#
+# postgresql:
+#   enabled: true
+#   global:
+#     postgresql:
+#       auth:
+#         username: nextcloud
+#         password: nextcloud_testing
+#         database: nextcloud_db
