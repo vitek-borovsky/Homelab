@@ -1,0 +1,21 @@
+service:
+  type: LoadBalancer
+  loadBalancerIP:
+ingress:
+  enabled: true
+  hosts:
+    - host: nextcloud.localhost.com
+      paths:
+        - /
+nextcloud:
+  host: nextcloud.localhost.com
+
+  # user (username, password) = (admin, changme) by default
+  #
+  # existingSecret.usernameKey:
+  # nextcloud.username	User of the application	admin
+  # nextcloud.password	Application password	changeme
+  # nextcloud.existingSecret.enabled	Whether to use an existing secret or not	false
+  # nextcloud.existingSecret.secretName	Name of the existing secret	nil
+  # nextcloud.existingSecret.usernameKey	Name of the key that contains the username	nil
+  # nextcloud.existingSecret.passwordKey	Name of the key that contains the password	nil
