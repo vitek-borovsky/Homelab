@@ -19,3 +19,5 @@ helm install nextcloud nextcloud/nextcloud -n nextcloud -f nextcloud.yaml
 helm upgrade nextcloud nextcloud/nextcloud -f nextcloud.yaml
 
 kubectl port-forward svc/nextcloud 8080:8080 -n nextcloud
+
+10.244.0.86 - - [24/Mar/2025:23:34:48 +0000] "GET / HTTP/1.1" 400 13959 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"

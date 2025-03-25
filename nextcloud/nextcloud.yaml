@@ -1,19 +1,21 @@
-service:
-  type: LoadBalancer
-  loadBalancerIP:
-ingress:
-  enabled: true
-  hosts:
-    - host: nextcloud.localhost.com
-      paths:
-        - /
-nextcloud:
-  host: nextcloud.localhost.com
+# user (username, password) = (admin, changme) by default
 
-  # user (username, password) = (admin, changme) by default
+livenessProbe:
+  initialDelaySeconds: 20
+
+service:
+  port: 80
 
 internalDatabase:
   enabled: true
+
+nextcloud:
+  host: nextcloud.kube.home
+
+# TODO: when any modification to trustedDomains is made
+# it just crashes the CONTAINER and probes won't let it get ready
+
+
 
 # externalDatabase:
 #   enabled: false
