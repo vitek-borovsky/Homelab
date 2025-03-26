@@ -10,12 +10,9 @@ internalDatabase:
   enabled: true
 
 nextcloud:
-  host: nextcloud.kube.home
-
-# TODO: when any modification to trustedDomains is made
-# it just crashes the CONTAINER and probes won't let it get ready
-
-
+  host: nextcloud.homelab
+  # trustedDomains:
+  #   - nextcloud.homelab
 
 # externalDatabase:
 #   enabled: false
