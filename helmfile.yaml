@@ -1,0 +1,37 @@
+repositories:
+- name: prometheus-community
+  url: https://prometheus-community.github.io/helm-charts
+
+- name: djjudas21
+  url: https://djjudas21.github.io/charts/
+
+- name: mojo2600
+  url: https://mojo2600.github.io/pihole-kubernetes/
+
+- name: nextcloud
+  url: https://nextcloud.github.io/helm/
+
+releases:
+- name: prometheus
+  namespace: monitoring
+  chart: prometheus-community/prometheus
+  values:
+    - monitoring/values.yaml
+
+# - name: jellyfin
+#   namespace: jellyfin
+#   chart: djjudas21/jellyfin
+#   values:
+#     - jellyfin/values.yaml
+
+- name: pihole
+  namespace: pihole
+  chart: mojo2600/pihole
+  values:
+    - pihole/values.yaml
+
+- name: nextcloud
+  namespace: nextcloud
+  chart: nextcloud/nextcloud
+  values:
+    - nextcloud/values.yaml

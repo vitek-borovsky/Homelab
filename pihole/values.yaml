@@ -1,22 +1,2 @@
 persistentVolumeClaim:
   enabled: true
-
-livenessProbe:
-  httpGet:
-    path: /admin/
-    port: 80  # Or omit the port entirely if it's on the default port
-  initialDelaySeconds: 60
-  timeoutSeconds: 5
-  periodSeconds: 10
-  successThreshold: 1
-  failureThreshold: 10
-
-readinessProbe:
-  httpGet:
-    path: /admin/
-    port: 80  # Or omit the port entirely if it's on the default port
-  initialDelaySeconds: 60
-  timeoutSeconds: 5
-  periodSeconds: 10
-  successThreshold: 1
-  failureThreshold: 5

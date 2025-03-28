@@ -1,0 +1,13 @@
+jellyfin:
+  mediaVolumes:
+    - /media
+
+ingress:
+  enabled: false
+
+presistance:
+  cache:
+    enabled: false
+
+  config:
+    enabled: false
