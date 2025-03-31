@@ -2,6 +2,11 @@
 Each folder represents an aplication. Each of these application is
 in its own namespace of the same name
 
+if you are in a minikube you also need the
+minikube addons enable ingress
+or setup up diffrent ingress controller
+
+
 ## Installation
 ### Prepare namespaces
 
