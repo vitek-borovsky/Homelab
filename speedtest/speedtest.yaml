@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: speedtest
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: speedtest
+  namespace: speedtest
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    metadata:
+      name: speedtest
+      namespace: speedtest
+    spec:
+      template:
+        spec:
+          containers:
+          - name: speedtest
+            image: alpine:latest
+            command: [ "sh", "-c" ]
+            args:
+              - |
+                # set -x
+                apk add curl python3
+                result="$(curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 - --simple)"
+
+                ping="$(echo $result | cut -d ' ' -f 2)" # ms
+                download="$(echo $result | cut -d ' ' -f 5)" # Mbit/s
+                upload="$(echo $result | cut -d ' ' -f 8)" # Mbit/s
+
+                # echo "Messured ping: $ping download: $download upload: $upload"
+
+                URI="prometheus-prometheus-pushgateway.monitoring.svc.cluster.local"
+                echo "ping_ms $ping" | curl -s --data-binary @- "http://${URI}:9091/metrics/job/speedtest"
+                echo "download_Mbps $download" | curl -s --data-binary @- "http://${URI}:9091/metrics/job/speedtest"
+                echo "upload_Mbps $upload" | curl -s --data-binary @- "http://${URI}:9091/metrics/job/speedtest"
+          restartPolicy: OnFailure
