@@ -25,3 +25,6 @@ or setup up diffrent ingress controller
 helm plugin install https://github.com/databus23/helm-diff
 
 helmfile apply -f helmfile.yaml
+
+## Improvements
+Speedtest: Don't curl the Speedtest script on every run build it in the image instead
