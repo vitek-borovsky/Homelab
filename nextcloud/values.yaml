@@ -1,8 +1,5 @@
 # user (username, password) = (admin, changme) by default
 
-livenessProbe:
-  initialDelaySeconds: 20
-
 service:
   port: 80
 
@@ -10,9 +7,16 @@ internalDatabase:
   enabled: true
 
 nextcloud:
-  host: nextcloud.homelab
+  host: nextcloud.localhost
+#   host: nextcloud.homelab
   # trustedDomains:
   #   - nextcloud.homelab
+
+
+ingress:
+  enabled: true
+  annotations:
+    nginx.ingress.kubernetes.io/affinity: cookie
 
 # externalDatabase:
 #   enabled: false
