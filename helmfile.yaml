@@ -11,6 +11,10 @@ repositories:
 - name: nextcloud
   url: https://nextcloud.github.io/helm/
 
+- name: twingate
+  url: https://twingate.github.io/helm-charts
+
+
 releases:
 - name: prometheus
   namespace: monitoring
@@ -35,3 +39,9 @@ releases:
   chart: nextcloud/nextcloud
   values:
     - nextcloud/values.yaml
+
+- name: twingate
+  namespace: twingate
+  chart: twingate/connector
+  values:
+    - twingate/values.yaml

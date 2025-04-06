@@ -1,0 +1,4 @@
+connector:
+  network: vitekborovsky
+
+  existingSecret: twingate-credentials
