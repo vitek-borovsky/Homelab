@@ -2,6 +2,9 @@ repositories:
 - name: prometheus-community
   url: https://prometheus-community.github.io/helm-charts
 
+- name: grafana
+  url: https://grafana.github.io/helm-charts
+
 - name: djjudas21
   url: https://djjudas21.github.io/charts/
 
@@ -20,10 +23,22 @@ repositories:
 
 releases:
 - name: prometheus
-  namespace: monitoring
+  namespace: prometheus
   chart: prometheus-community/prometheus
   values:
-    - monitoring/values.yaml
+    - prometheus/values.yaml
+
+- name: loki
+  namespace: loki
+  chart: grafana/loki
+  values:
+    - loki/values.yaml
+
+- name: grafana
+  namespace: grafana
+  chart: grafana/grafana
+  values:
+    - grafana/values.yaml
 
 # - name: jellyfin
 #   namespace: jellyfin
