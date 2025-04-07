@@ -22,25 +22,37 @@ data:
               href: https://github.com/
   # It has really weird formating with the 4-wide tabs
   # But follow it. It does'nt work on 2-wide tabs
+  # siteMonitor = ping the service to see if it's up
+  # use siteMonitor for URLs and ping for Ips/Hostname
   services.yaml: |
     - Monitoring:
         - Grafana:
             href: http://grafana.localhost:8081/
             description: Homepage is awesome
+            icon: grafana.svg
+            siteMonitor: http://grafana.grafana.svc.cluster.local
 
         - Prometheus:
             href: http://prometheus.localhost:8081/
+            icon: prometheus.svg
+            siteMonitor: http://prometheus-server.prometheus.svc.cluster.local
 
     - Services:
         - Nextcloud:
-            href: http://nextcloud.localhost:8081/
+            href: http://nextcloud.localhost:8081/login
             description: Homepage is the best
+            icon: nextcloud.svg
+            siteMonitor: http://nextcloud.nextcloud.svc.cluster.local
 
         - Jenkins:
-            href: http://jenkins.localhost:8081/
+            href: http://jenkins.localhost:8081/login
+            icon: jenkins.svg
+            siteMonitor: http://jenkins.jenkins.svc.cluster.local:8080
 
         - Pihole:
-            href: http://pihole.localhost:8081/
+            href: http://pihole.localhost:8081/admin/login
+            icon: pi-hole.svg
+            siteMonitor: http://pihole-web.pihole.svc.cluster.local
 
   widgets.yaml: |
     - kubernetes:

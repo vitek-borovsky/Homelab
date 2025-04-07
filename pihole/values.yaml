@@ -1,2 +1,8 @@
 persistentVolumeClaim:
   enabled: true
+
+ingress:
+  enabled: true
+  hosts:
+    - "pihole.localhost"
+  pathType: Prefix
