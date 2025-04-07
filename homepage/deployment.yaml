@@ -28,7 +28,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: HOMEPAGE_ALLOWED_HOSTS
-              value: localhost:8001,homepage.localhost:8001
+              value: homepage.localhost:8081
           ports:
             - name: http
               containerPort: 3000

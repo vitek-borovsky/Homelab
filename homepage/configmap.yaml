@@ -20,21 +20,28 @@ data:
         - Github:
             - abbr: GH
               href: https://github.com/
+  # It has really weird formating with the 4-wide tabs
+  # But follow it. It does'nt work on 2-wide tabs
   services.yaml: |
     - Monitoring:
-      - Grafana:
-        href: http://grafana.localhost:8001/
-        description: Homepage is awesome
+        - Grafana:
+            href: http://grafana.localhost:8081/
+            description: Homepage is awesome
+
+        - Prometheus:
+            href: http://prometheus.localhost:8081/
 
     - Services:
-      - Nextcloud:
-        href: http://nextcloud.localhost:8001/
-        description: Homepage is the best
+        - Nextcloud:
+            href: http://nextcloud.localhost:8081/
+            description: Homepage is the best
 
-    - My Third Group:
-        - My Third Service:
-            href: http://localhost/
-            description: Homepage is 😎
+        - Jenkins:
+            href: http://jenkins.localhost:8081/
+
+        - Pihole:
+            href: http://pihole.localhost:8081/
+
   widgets.yaml: |
     - kubernetes:
         cluster:
