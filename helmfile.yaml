@@ -1,7 +1,4 @@
 repositories:
-  - name: gabe565
-    url: https://charts.gabe565.com
-
   - name: prometheus-community
     url: https://prometheus-community.github.io/helm-charts
 
@@ -25,12 +22,6 @@ repositories:
 
 
 releases:
-  - name: homer
-    namespace: homer
-    chart: gabe565/homer
-    values:
-      - homer/values.yaml
-
   - name: prometheus
     namespace: prometheus
     chart: prometheus-community/prometheus
