@@ -29,5 +29,8 @@ helm plugin install https://github.com/databus23/helm-diff
 
 helmfile apply -f helmfile.yaml
 
+#### Install dashboard
+kubectl apply homepage/
+
 ## Improvements
 Speedtest: Don't curl the Speedtest script on every run build it in the image instead
