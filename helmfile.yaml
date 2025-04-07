@@ -1,71 +1,80 @@
 repositories:
-- name: prometheus-community
-  url: https://prometheus-community.github.io/helm-charts
+  - name: gabe565
+    url: https://charts.gabe565.com
 
-- name: grafana
-  url: https://grafana.github.io/helm-charts
+  - name: prometheus-community
+    url: https://prometheus-community.github.io/helm-charts
 
-- name: djjudas21
-  url: https://djjudas21.github.io/charts/
+  - name: grafana
+    url: https://grafana.github.io/helm-charts
 
-- name: mojo2600
-  url: https://mojo2600.github.io/pihole-kubernetes/
+  - name: djjudas21
+    url: https://djjudas21.github.io/charts/
 
-- name: nextcloud
-  url: https://nextcloud.github.io/helm/
+  - name: mojo2600
+    url: https://mojo2600.github.io/pihole-kubernetes/
 
-- name: twingate
-  url: https://twingate.github.io/helm-charts
+  - name: nextcloud
+    url: https://nextcloud.github.io/helm/
 
-- name: jenkinsci
-  url: https://charts.jenkins.io
+  - name: twingate
+    url: https://twingate.github.io/helm-charts
+
+  - name: jenkinsci
+    url: https://charts.jenkins.io
 
 
 releases:
-- name: prometheus
-  namespace: prometheus
-  chart: prometheus-community/prometheus
-  values:
-    - prometheus/values.yaml
+  - name: homer
+    namespace: homer
+    chart: gabe565/homer
+    values:
+      - homer/values.yaml
 
-- name: loki
-  namespace: loki
-  chart: grafana/loki
-  values:
-    - loki/values.yaml
+  - name: prometheus
+    namespace: prometheus
+    chart: prometheus-community/prometheus
+    values:
+      - prometheus/values.yaml
 
-- name: grafana
-  namespace: grafana
-  chart: grafana/grafana
-  values:
-    - grafana/values.yaml
+  - name: loki
+    namespace: loki
+    chart: grafana/loki
+    values:
+      - loki/values.yaml
 
-# - name: jellyfin
-#   namespace: jellyfin
-#   chart: djjudas21/jellyfin
-#   values:
-#     - jellyfin/values.yaml
+  - name: grafana
+    namespace: grafana
+    chart: grafana/grafana
+    values:
+      - grafana/values.yaml
 
-- name: pihole
-  namespace: pihole
-  chart: mojo2600/pihole
-  values:
-    - pihole/values.yaml
+  # - name: jellyfin
+  #   namespace: jellyfin
+  #   chart: djjudas21/jellyfin
+  #   values:
+  #     - jellyfin/values.yaml
 
-- name: nextcloud
-  namespace: nextcloud
-  chart: nextcloud/nextcloud
-  values:
-    - nextcloud/values.yaml
+  - name: pihole
+    namespace: pihole
+    chart: mojo2600/pihole
+    values:
+      - pihole/values.yaml
 
-- name: twingate
-  namespace: twingate
-  chart: twingate/connector
-  values:
-    - twingate/values.yaml
+  - name: nextcloud
+    namespace: nextcloud
+    chart: nextcloud/nextcloud
+    values:
+      - nextcloud/values.yaml
 
-- name: jenkins
-  namespace: jenkins
-  chart: jenkinsci/jenkins
-  values:
-    - jenkins/values.yaml
+  - name: twingate
+    namespace: twingate
+    chart: twingate/connector
+    values:
+      - twingate/values.yaml
+
+  - name: jenkins
+    namespace: jenkins
+    chart: jenkinsci/jenkins
+    values:
+      - jenkins/values.yaml
