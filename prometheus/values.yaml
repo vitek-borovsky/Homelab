@@ -93,6 +93,11 @@ server:
   ##
   name: server
 
+  ingress:
+    enabled: true
+    hosts:
+      - prometheus.localhost
+
   ## Opt out of automounting Kubernetes API credentials.
   ## If set it will override serviceAccounts.server.automountServiceAccountToken value for ServiceAccount.
   # automountServiceAccountToken: false
