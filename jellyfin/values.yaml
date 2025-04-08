@@ -1,6 +1,14 @@
-# jellyfin:
-#   mediaVolumes:
-#     - /media
+existingClaim: true
+jellyfin:
+  mediaVolumes:
+    - name: music
+      readOnly: true
+      existingClaim: "media-pvc"
+      volumeSpec:
+        accessModes:
+          - ReadWriteOnce
+        capacity:
+          storage: 1Gi
 
 ingress:
   enabled: true
@@ -9,7 +17,6 @@ ingress:
   #   - jellyfin.vitekborovsky.twingate.com
   path: /
   pathType: Prefix
-
 
 
 presistance:
