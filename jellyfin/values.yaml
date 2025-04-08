@@ -1,9 +1,16 @@
-jellyfin:
-  mediaVolumes:
-    - /media
+# jellyfin:
+#   mediaVolumes:
+#     - /media
 
 ingress:
-  enabled: false
+  enabled: true
+  hostname: jellyfin.localhost
+  # extraHosts:
+  #   - jellyfin.vitekborovsky.twingate.com
+  path: /
+  pathType: Prefix
+
+
 
 presistance:
   cache:

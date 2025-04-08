@@ -40,11 +40,11 @@ releases:
     values:
       - grafana/values.yaml
 
-  # - name: jellyfin
-  #   namespace: jellyfin
-  #   chart: djjudas21/jellyfin
-  #   values:
-  #     - jellyfin/values.yaml
+  - name: jellyfin
+    namespace: jellyfin
+    chart: djjudas21/jellyfin
+    values:
+      - jellyfin/values.yaml
 
   - name: pihole
     namespace: pihole

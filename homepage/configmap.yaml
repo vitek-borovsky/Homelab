@@ -54,6 +54,11 @@ data:
             icon: pi-hole.svg
             siteMonitor: http://pihole-web.pihole.svc.cluster.local
 
+        - Jellyfin:
+            href: http://jellyfin.localhost:8081
+            icon: jellyfin.svg
+            siteMonitor: http://jellyfin.jellyfin.svc.cluster.local
+
   widgets.yaml: |
     - kubernetes:
         cluster:
