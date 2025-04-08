@@ -63,12 +63,12 @@ data:
         - Five Filters:
             href: http://fivefilters.localhost:8081
             icon: rsshub.png # TODO bad icon
-            siteMonitor: http://fivefilters.rss.svc.cluster.local
+            siteMonitor: http://fivefilters.fivefilters.svc.cluster.local
 
         - Fresh RSS:
             href: http://freshrss.localhost:8081
             icon: freshrss.svg
-            siteMonitor: http://freshrss.rss.svc.cluster.local
+            siteMonitor: http://freshrss.freshrss.svc.cluster.local
 
   widgets.yaml: |
     - kubernetes:

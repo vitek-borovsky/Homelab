@@ -20,6 +20,8 @@ repositories:
   - name: jenkinsci
     url: https://charts.jenkins.io
 
+  - name: k8s-homelab
+    url: https://k8s-home-lab.github.io/helm-charts/
 
 releases:
   - name: prometheus
@@ -69,3 +71,9 @@ releases:
     chart: jenkinsci/jenkins
     values:
       - jenkins/values.yaml
+
+  - name: freshrss
+    namespace: freshrss
+    chart: k8s-homelab/freshrss
+    values:
+      - freshrss/freshrss-values.yaml
