@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: fivefilters
+  name: fivefilters
+  namespace: rss
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fivefilters
+  template:
+    metadata:
+      labels:
+        app: fivefilters
+    spec:
+      containers:
+      - image: heussd/fivefilters-full-text-rss:latest
+        name: fivefilters-full-text-rss
+        ports:
+          - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fivefilters
+  namespace: rss
+spec:
+  selector:
+    app: fivefilters
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fivefilters
+  namespace: rss
+  labels:
+    app.kubernetes.io/name: fivefilters
+spec:
+  rules:
+    - host: "fivefilters.localhost"
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: fivefilters
+                port:
+                  number: 80

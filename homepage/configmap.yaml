@@ -24,6 +24,7 @@ data:
   # But follow it. It does'nt work on 2-wide tabs
   # siteMonitor = ping the service to see if it's up
   # use siteMonitor for URLs and ping for Ips/Hostname
+  # iconsgithub: https://github.com/homarr-labs/dashboard-icons
   services.yaml: |
     - Monitoring:
         - Grafana:
@@ -58,6 +59,16 @@ data:
             href: http://jellyfin.localhost:8081
             icon: jellyfin.svg
             siteMonitor: http://jellyfin.jellyfin.svc.cluster.local
+    - Rss:
+        - Five Filters:
+            href: http://fivefilters.localhost:8081
+            icon: rsshub.png # TODO bad icon
+            siteMonitor: http://fivefilters.rss.svc.cluster.local
+
+        - Fresh RSS:
+            href: http://freshrss.localhost:8081
+            icon: freshrss.svg
+            siteMonitor: http://freshrss.rss.svc.cluster.local
 
   widgets.yaml: |
     - kubernetes:
