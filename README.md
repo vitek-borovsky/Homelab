@@ -8,15 +8,6 @@ or setup up diffrent ingress controller
 
 
 ## Installation
-### Prepare namespaces
-
-### Prepare secrets
-#### Nextcloud
-#TODO
-
-#### Twingate
-#TODO
-
 ### Using helm
 #### Install helm
 #TODO
@@ -31,6 +22,17 @@ helmfile apply -f helmfile.yaml
 
 #### Install dashboard
 kubectl apply homepage/
+
+### Prepare secrets
+#### Nextcloud
+#TODO
+
+#### Twingate
+#TODO
+
+### Re-apply configuration
+helmfile apply -f helmfile.yaml
+
 
 ## Improvements
 Speedtest: Don't curl the Speedtest script on every run build it in the image instead
