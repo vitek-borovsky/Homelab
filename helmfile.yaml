@@ -76,4 +76,4 @@ releases:
     namespace: freshrss
     chart: k8s-homelab/freshrss
     values:
-      - freshrss/freshrss-values.yaml
+      - freshrss/values.yaml
