@@ -30,12 +30,6 @@ releases:
     values:
       - prometheus/values.yaml
 
-  - name: loki
-    namespace: loki
-    chart: grafana/loki
-    values:
-      - loki/values.yaml
-
   - name: grafana
     namespace: grafana
     chart: grafana/grafana
