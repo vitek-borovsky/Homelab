@@ -60,11 +60,11 @@ releases:
     values:
       - nextcloud/values.yaml
 
-  - name: twingate
-    namespace: twingate
-    chart: twingate/connector
-    values:
-      - twingate/values.yaml
+  # - name: twingate
+  #   namespace: twingate
+  #   chart: twingate/connector
+  #   values:
+  #     - twingate/values.yaml
 
   - name: jenkins
     namespace: jenkins
