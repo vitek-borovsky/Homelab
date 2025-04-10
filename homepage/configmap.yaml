@@ -15,11 +15,34 @@ data:
   #      url: https://longhorn.my.network
   custom.css: ""
   custom.js: ""
+
+  #
   bookmarks.yaml: |
+    - Personal:
+        - Gmail:
+            - abbr: GM
+              href: https://mail.google.com/mail/u/0/#inbox
+        - Facebook:
+            - abbr: FB
+              href: https://www.facebook.com/
+    - Babicka:
+        - Forms:
+            - abbr: GF
+              href: https://docs.google.com/forms/d/e/1FAIpQLScyafKwqDN_sDhtiTSrBTTWow7EjXigpA3NewPrVZEQsFCrmw/viewform?usp=dialog
+        - Sheets:
+            - abbr: GS
+              href: https://docs.google.com/spreadsheets/d/11O4i7p-jc43n7rN48HjOyPAX9Yzf2ltFgVaeaUkAvlE/edit?gid=928254186#gid=928254186
     - Developer:
         - Github:
             - abbr: GH
               href: https://github.com/
+
+    - Network:
+        - MiRouter:
+            - abbr: Mi
+              href: miwifi.com
+
+
   # It has really weird formating with the 4-wide tabs
   # But follow it. It does'nt work on 2-wide tabs
   # siteMonitor = ping the service to see if it's up
@@ -31,12 +54,12 @@ data:
             href: http://grafana.localhost:8081/
             description: Homepage is awesome
             icon: grafana.svg
-            siteMonitor: http://grafana.grafana.svc.cluster.local
+            siteMonitor: http://lgtm-grafana.lgtm.svc.cluster.local
 
         - Prometheus:
             href: http://prometheus.localhost:8081/
             icon: prometheus.svg
-            siteMonitor: http://prometheus-server.prometheus.svc.cluster.local
+            siteMonitor: http://lgtm-mimir-nginx.lgtm.svc.cluster.local
 
     - Services:
         - Nextcloud:

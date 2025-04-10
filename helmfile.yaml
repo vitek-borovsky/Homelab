@@ -25,16 +25,16 @@ repositories:
 
 releases:
   - name: prometheus
-    namespace: prometheus
+    namespace: lgtm
     chart: prometheus-community/prometheus
     values:
-      - prometheus/values.yaml
+      - lgtm/prom-values.yaml
 
-  - name: grafana
-    namespace: grafana
-    chart: grafana/grafana
+  - name: lgtm
+    namespace: lgtm
+    chart: grafana/lgtm-distributed
     values:
-      - grafana/values.yaml
+      - lgtm/values.yaml
 
   # - name: jellyfin
   #   namespace: jellyfin
@@ -48,11 +48,11 @@ releases:
     values:
       - pihole/values.yaml
 
-  - name: nextcloud
-    namespace: nextcloud
-    chart: nextcloud/nextcloud
-    values:
-      - nextcloud/values.yaml
+  # - name: nextcloud
+  #   namespace: nextcloud
+  #   chart: nextcloud/nextcloud
+  #   values:
+  #     - nextcloud/values.yaml
 
   # - name: twingate
   #   namespace: twingate
@@ -60,11 +60,11 @@ releases:
   #   values:
   #     - twingate/values.yaml
 
-  - name: jenkins
-    namespace: jenkins
-    chart: jenkinsci/jenkins
-    values:
-      - jenkins/values.yaml
+  # - name: jenkins
+  #   namespace: jenkins
+  #   chart: jenkinsci/jenkins
+  #   values:
+  #     - jenkins/values.yaml
 
   - name: freshrss
     namespace: freshrss

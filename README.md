@@ -8,7 +8,10 @@ or setup up diffrent ingress controller
 
 
 ## Installation
-### Using helm
+### Clone repo
+git clone #TODO
+
+
 #### Install helm
 #TODO
 
@@ -17,21 +20,6 @@ or setup up diffrent ingress controller
 
 #### Install helm-diff plugin
 helm plugin install https://github.com/databus23/helm-diff
-
-helmfile apply -f helmfile.yaml
-
-#### Install dashboard
-kubectl apply homepage/
-
-### Prepare secrets
-#### Nextcloud
-#TODO
-
-#### Twingate
-#TODO
-
-### Re-apply configuration
-helmfile apply -f helmfile.yaml
 
 
 ## Improvements
