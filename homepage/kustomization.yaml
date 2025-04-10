@@ -1,0 +1,28 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: homelab
+
+labels:
+  - includeSelectors: true
+    pairs:
+      app: homepage
+
+
+configMapGenerator:
+  - name: homepage
+    files:
+      - kubernetes.yaml=config/kubernetes.yaml
+      - settings.yaml=config/settings.yaml
+      - custom.css=config/custom.css
+      - custom.js=config/custom.js
+      - bookmarks.yaml=config/bookmarks.yaml
+      - services.yaml=config/services.yaml
+      - widgets.yaml=config/widgets.yaml
+      - docker.yaml=config/docker.yaml
+
+resources:
+  - account.yaml
+  - deployment.yaml
+  - ingress.yaml
+
+  # - secret.yaml

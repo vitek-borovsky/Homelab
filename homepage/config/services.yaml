@@ -1,0 +1,43 @@
+- Monitoring:
+    - Grafana:
+        href: http://grafana.localhost:8081/
+        description: Homepage is awesome
+        icon: grafana.svg
+        siteMonitor: http://lgtm-grafana.homelab.svc.cluster.local
+
+    - Prometheus:
+        href: http://prometheus.localhost:8081/
+        icon: prometheus.svg
+        siteMonitor: http://lgtm-mimir-nginx.homelab.svc.cluster.local
+
+- Services:
+    - Nextcloud:
+        href: http://nextcloud.localhost:8081/login
+        description: Homepage is the best
+        icon: nextcloud.svg
+        siteMonitor: http://nextcloud.homelab.svc.cluster.local
+
+    - Jenkins:
+        href: http://jenkins.localhost:8081/login
+        icon: jenkins.svg
+        siteMonitor: http://jenkins.homelab.svc.cluster.local:8080
+
+    - Pihole:
+        href: http://pihole.localhost:8081/admin/login
+        icon: pi-hole.svg
+        siteMonitor: http://pihole-web.homelab.svc.cluster.local
+
+    - Jellyfin:
+        href: http://jellyfin.localhost:8081
+        icon: jellyfin.svg
+        siteMonitor: http://jellyfin.homelab.svc.cluster.local
+- Rss:
+    - Five Filters:
+        href: http://fivefilters.localhost:8081
+        icon: rsshub.png # TODO bad icon
+        siteMonitor: http://fivefilters.homelab.svc.cluster.local
+
+    - Fresh RSS:
+        href: http://freshrss.localhost:8081
+        icon: freshrss.svg
+        siteMonitor: http://freshrss.homelab.svc.cluster.local

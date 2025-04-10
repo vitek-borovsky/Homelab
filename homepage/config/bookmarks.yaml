@@ -1,0 +1,23 @@
+- Personal:
+    - Gmail:
+        - abbr: GM
+          href: https://mail.google.com/mail/u/0/#inbox
+    - Facebook:
+        - abbr: FB
+          href: https://www.facebook.com/
+- Babicka:
+    - Forms:
+        - abbr: GF
+          href: https://docs.google.com/forms/d/e/1FAIpQLScyafKwqDN_sDhtiTSrBTTWow7EjXigpA3NewPrVZEQsFCrmw/viewform?usp=dialog
+    - Sheets:
+        - abbr: GS
+          href: https://docs.google.com/spreadsheets/d/11O4i7p-jc43n7rN48HjOyPAX9Yzf2ltFgVaeaUkAvlE/edit?gid=928254186#gid=928254186
+- Developer:
+    - Github:
+        - abbr: GH
+          href: https://github.com/
+
+- Network:
+    - Router:
+        - abbr: MI
+          href: https://miwifi.com/

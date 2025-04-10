@@ -1,1 +1,5 @@
 credentials.txt
+
+charts/
+
+*.env

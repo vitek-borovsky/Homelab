@@ -5,6 +5,8 @@ pkgs.mkShell {
     minikube
     kubernetes-helm
     helmfile
+    kustomize
+
   ];
 
   shellHook = ''

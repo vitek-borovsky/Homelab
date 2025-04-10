@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: homelab
+
+labels:
+  - includeSelectors: true
+    pairs:
+      app: jenkins
+
+secretGenerator:
+  - name: jenkins-credentials
+    envs:
+      - credentials.env
+
+helmCharts:
+  - releaseName: jenkins
+    name: jenkins
+    repo: https://charts.jenkins.io
+    valuesFile: values.yaml
