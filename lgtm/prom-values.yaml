@@ -96,7 +96,7 @@ server:
   ingress:
     enabled: true
     hosts:
-      - prometheus.localhost
+      - prometheus.homelab
 
   ## Opt out of automounting Kubernetes API credentials.
   ## If set it will override serviceAccounts.server.automountServiceAccountToken value for ServiceAccount.

@@ -43,7 +43,7 @@ metadata:
     app.kubernetes.io/name: fivefilters
 spec:
   rules:
-    - host: "fivefilters.localhost"
+    - host: "fivefilters.homelab"
       http:
         paths:
           - path: "/"

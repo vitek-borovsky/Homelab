@@ -4,7 +4,7 @@ ingress:
   main:
     enabled: true
     hosts:
-    - host: freshrss.localhost
+    - host: freshrss.homelab
       paths:
         - path: /
           pathType: Prefix

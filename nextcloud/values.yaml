@@ -95,7 +95,7 @@ phpClientHttpsFix:
   protocol: https
 
 nextcloud:
-  host: nextcloud.localhost
+  host: nextcloud.homelab
   existingSecret:
     enabled: true
     secretName: nextcloud-credentials

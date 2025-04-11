@@ -9,7 +9,7 @@ grafana:
     path: /
     pathType: Prefix
     hosts:
-      - "grafana.localhost"
+      - "grafana.homelab"
 
   # -- Grafana data sources config. Connects to all three by default
   # datasources:

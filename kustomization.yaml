@@ -12,8 +12,8 @@ resources:
   - homepage
   - lgtm
   - rss
-  - jenkins
   - pihole
   - nextcloud
   - twingate
+  # - jenkins
   # - jellyfin
