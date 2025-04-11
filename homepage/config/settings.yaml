@@ -1,0 +1,8 @@
+title: Homelab
+
+background:
+  image: https://wallpapers.com/images/high/lion-king-scar-gj8w7cj40cmwtl33.webp
+  blur: lg # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+  saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+  brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+  opacity: 50 # 0-100
