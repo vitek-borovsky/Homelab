@@ -2,14 +2,14 @@
 
 pkgs.mkShell {
   buildInputs = with pkgs; [
-    minikube
     kubernetes-helm
-    helmfile
     kustomize
 
+    (python313.withPackages (ps: with ps; [
+        pulumi
+    ]))
   ];
 
   shellHook = ''
-    # minikube addons enable ingress
   '';
 }

@@ -3,3 +3,4 @@ credentials.txt
 charts/
 
 *.env
+secrets.tfvars
