@@ -7,8 +7,6 @@ metadata:
 spec:
   revisionHistoryLimit: 3
   replicas: 1
-  strategy:
-    type: RollingUpdate
   selector:
     matchLabels:
       app.kubernetes.io/name: homepage
@@ -57,12 +55,17 @@ spec:
             - mountPath: /app/config/widgets.yaml
               name: homepage-config
               subPath: widgets.yaml
+            - mountPath: /app/config/background.jpg
+              name: homepage-background
             - mountPath: /app/config/logs
               name: logs
       volumes:
         - name: homepage-config
           configMap:
             name: homepage
+        - name: homepage-background
+          persistentVolumeClaim:
+            claimName: homepage-bg-pvc
         - name: logs
           emptyDir: {}
 ---
