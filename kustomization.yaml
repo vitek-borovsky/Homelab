@@ -9,6 +9,7 @@ labels:
 
 resources:
   - namespace.yaml
+  - storage-class.yaml
   - homepage
   - lgtm
   - rss
