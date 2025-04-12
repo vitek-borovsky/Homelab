@@ -20,7 +20,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /mnt/homelab/rss/freshrss/config
+    path: /mnt/homelab/mysql/data
   storageClassName: local-persistent
 ---
 apiVersion: v1
