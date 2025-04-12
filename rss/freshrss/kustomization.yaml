@@ -5,7 +5,7 @@ namespace: homelab
 labels:
   - includeSelectors: true
     pairs:
-      subapp: rss
+      subapp: freshrss
 
 helmCharts:
   - releaseName: freshrss
