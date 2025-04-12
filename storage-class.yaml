@@ -4,3 +4,4 @@ metadata:
   name: local-persistent
 provisioner: kubernetes.io/no-provisioner
 reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
