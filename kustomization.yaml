@@ -17,5 +17,6 @@ resources:
   - nextcloud
   - twingate
   - mysql
+  - adminer
   # - jenkins
   # - jellyfin
