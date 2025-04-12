@@ -135,7 +135,7 @@ auth:
   ## @param auth.username Name for a custom user to create
   ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mysql#creating-a-database-user-on-first-run
   ##
-  username: ""
+  username: "vitek"
   ## @param auth.password Password for the new user. Ignored if existing secret is provided
   ##
   password: ""
@@ -149,7 +149,7 @@ auth:
   ## @param auth.existingSecret Use existing secret for password details. The secret has to contain the keys `mysql-root-password`, `mysql-replication-password` and `mysql-password`
   ## NOTE: When it's set the auth.rootPassword, auth.password, auth.replicationPassword are ignored.
   ##
-  existingSecret: ""
+  existingSecret: mysql-credentials
   ## @param auth.usePasswordFiles Mount credentials as files instead of using an environment variable
   ##
   usePasswordFiles: true
@@ -1619,4 +1619,3 @@ metrics:
     ##      summary: mysql instance is down
     ##
     rules: []
-

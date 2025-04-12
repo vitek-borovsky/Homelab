@@ -8,10 +8,10 @@ labels:
       app: mysql
 
 
-# secretGenerator:
-#   - name: grafana-credentials
-#     envs:
-#       - credentials.env
+secretGenerator:
+  - name: mysql-credentials
+    envs:
+      - credentials.env
 
 helmCharts:
   - releaseName: mysql
