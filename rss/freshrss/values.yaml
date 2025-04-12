@@ -15,4 +15,13 @@ persistence:
   config:
     enabled: true
     existingClaim: freshrss-config-pvc
-    size: 1Gi
+
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: "kubernetes.io/hostname"
+              operator: In
+              values:
+                - homelab
