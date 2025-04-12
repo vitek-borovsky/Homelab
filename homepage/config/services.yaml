@@ -1,43 +1,43 @@
 - Monitoring:
     - Grafana:
-        href: http://grafana.homelab:8081/
+        href: http://grafana.homelab/
         description: Homepage is awesome
         icon: grafana.svg
         siteMonitor: http://lgtm-grafana.homelab.svc.cluster.local
 
     - Prometheus:
-        href: http://prometheus.homelab:8081/
+        href: http://prometheus.homelab/
         icon: prometheus.svg
         siteMonitor: http://lgtm-mimir-nginx.homelab.svc.cluster.local
 
 - Services:
     - Nextcloud:
-        href: http://nextcloud.homelab:8081/login
+        href: http://nextcloud.homelab/login
         description: Homepage is the best
         icon: nextcloud.svg
         siteMonitor: http://nextcloud.homelab.svc.cluster.local
 
     - Jenkins:
-        href: http://jenkins.homelab:8081/login
+        href: http://jenkins.homelab/login
         icon: jenkins.svg
         siteMonitor: http://jenkins.homelab.svc.cluster.local:8080
 
     - Pihole:
-        href: http://pihole.homelab:8081/admin/login
+        href: http://pihole.homelab/admin/login
         icon: pi-hole.svg
         siteMonitor: http://pihole-web.homelab.svc.cluster.local
 
     - Jellyfin:
-        href: http://jellyfin.homelab:8081
+        href: http://jellyfin.homelab
         icon: jellyfin.svg
         siteMonitor: http://jellyfin.homelab.svc.cluster.local
 - Rss:
     - Five Filters:
-        href: http://fivefilters.homelab:8081
+        href: http://fivefilters.homelab
         icon: rsshub.png # TODO bad icon
         siteMonitor: http://fivefilters.homelab.svc.cluster.local
 
     - Fresh RSS:
-        href: http://freshrss.homelab:8081
+        href: http://freshrss.homelab
         icon: freshrss.svg
         siteMonitor: http://freshrss.homelab.svc.cluster.local
