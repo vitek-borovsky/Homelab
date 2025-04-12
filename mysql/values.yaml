@@ -123,7 +123,7 @@ auth:
   ## @param auth.rootPassword Password for the `root` user. Ignored if existing secret is provided
   ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mysql#setting-the-root-password-on-first-run
   ##
-  rootPassword: ""
+  # rootPassword: ""
   ## @param auth.createDatabase Whether to create the .Values.auth.database or not
   ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mysql#creating-a-database-on-first-run
   ##
@@ -135,24 +135,24 @@ auth:
   ## @param auth.username Name for a custom user to create
   ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mysql#creating-a-database-user-on-first-run
   ##
-  username: "vitek"
+  # username: "vitek"
   ## @param auth.password Password for the new user. Ignored if existing secret is provided
   ##
-  password: ""
+  # password: ""
   ## @param auth.replicationUser MySQL replication user
   ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mysql#setting-up-a-replication-cluster
   ##
-  replicationUser: replicator
+  # replicationUser: replicator
   ## @param auth.replicationPassword MySQL replication user password. Ignored if existing secret is provided
   ##
-  replicationPassword: ""
+  # replicationPassword: ""
   ## @param auth.existingSecret Use existing secret for password details. The secret has to contain the keys `mysql-root-password`, `mysql-replication-password` and `mysql-password`
   ## NOTE: When it's set the auth.rootPassword, auth.password, auth.replicationPassword are ignored.
   ##
   existingSecret: mysql-credentials
   ## @param auth.usePasswordFiles Mount credentials as files instead of using an environment variable
   ##
-  usePasswordFiles: true
+  # usePasswordFiles: true
   ## @param auth.customPasswordFiles Use custom password files when `auth.usePasswordFiles` is set to `true`. Define path for keys `root` and `user`, also define `replicator` if `architecture` is set to `replication`
   ## Example:
   ## customPasswordFiles:
@@ -160,11 +160,11 @@ auth:
   ##   user: /vault/secrets/mysql-user
   ##   replicator: /vault/secrets/mysql-replicator
   ##
-  customPasswordFiles: {}
+  # customPasswordFiles: {}
   ## @param auth.authenticationPolicy Sets the authentication policy, by default it will use `* ,,`
   ## ref: https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_authentication_policy
   ##
-  authenticationPolicy: ""
+  # authenticationPolicy: ""
 ## @param initdbScripts Dictionary of initdb scripts
 ## Specify dictionary of scripts to be run at first boot
 ## Example:
