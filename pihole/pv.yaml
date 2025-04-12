@@ -1,10 +1,9 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: freshrss-config-pv
+  name: pihole-data-pv
   labels:
-    app: freshrss
-    type: config
+    type: data
 spec:
   volumeMode: Filesystem
   persistentVolumeReclaimPolicy: Retain
@@ -21,18 +20,17 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /mnt/homelab/rss/freshrss/config
+    path: /mnt/homelab/pihole/data
   storageClassName: local-persistent
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: freshrss-config-pvc
+  name: pihole-data-pvc
 spec:
   selector:
     matchLabels:
-      app: freshrss
-      type: config
+      type: data
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce

@@ -180,7 +180,7 @@ persistentVolumeClaim:
   enabled: true
 
   # -- specify an existing `PersistentVolumeClaim` to use
-  # existingClaim: ""
+  existingClaim: ""
 
   # -- Annotations for the `PersitentVolumeClaim`
   annotations: {}
@@ -189,7 +189,7 @@ persistentVolumeClaim:
     - ReadWriteOnce
 
   # -- volume claim size
-  size: "500Mi"
+  size: "1Gi"
 
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
