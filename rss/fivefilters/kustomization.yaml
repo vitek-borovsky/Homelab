@@ -5,8 +5,7 @@ namespace: homelab
 labels:
   - includeSelectors: true
     pairs:
-      app: rss
+      subapp: fivefilters
 
 resources:
-  - freshrss
-  - fivefilters
+  - fivefilters.yaml
