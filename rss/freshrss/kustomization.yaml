@@ -12,3 +12,6 @@ helmCharts:
     name: freshrss
     repo: https://k8s-home-lab.github.io/helm-charts/
     valuesFile: values.yaml
+
+resources:
+  - pv.yaml
