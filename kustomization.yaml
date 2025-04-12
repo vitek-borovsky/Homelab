@@ -13,10 +13,10 @@ resources:
   - homepage
   - lgtm
   - rss
-  - pihole
   - nextcloud
   - twingate
   - mysql
   - adminer
+  # - pihole
   # - jenkins
   # - jellyfin
