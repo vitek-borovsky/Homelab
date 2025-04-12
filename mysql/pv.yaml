@@ -7,6 +7,14 @@ metadata:
 spec:
   volumeMode: Filesystem
   persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - homelab
   capacity:
     storage: 10Gi
   accessModes:
