@@ -16,5 +16,6 @@ resources:
   - pihole
   - nextcloud
   - twingate
+  - mysql
   # - jenkins
   # - jellyfin
