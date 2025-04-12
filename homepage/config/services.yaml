@@ -10,6 +10,12 @@
         icon: prometheus.svg
         siteMonitor: http://lgtm-mimir-nginx.homelab.svc.cluster.local
 
+    - Adminer:
+        href: http://adminer.homelab/
+        icon: adminer.svg
+        siteMonitor: http://adminer.homelab.svc.cluster.local
+
+
 - Services:
     - Nextcloud:
         href: http://nextcloud.homelab/login
