@@ -180,7 +180,7 @@ persistentVolumeClaim:
   enabled: true
 
   # -- specify an existing `PersistentVolumeClaim` to use
-  existingClaim: ""
+  existingClaim: pihole-data-pvc
 
   # -- Annotations for the `PersitentVolumeClaim`
   annotations: {}
@@ -205,7 +205,8 @@ persistentVolumeClaim:
   ## subPath: "pihole"
 
 # -- Node selector values
-nodeSelector: {}
+nodeSelector:
+  kubernetes.io/hostname: homelab
 
 # -- Toleration
 tolerations: []
