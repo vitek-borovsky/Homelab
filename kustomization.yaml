@@ -17,6 +17,6 @@ resources:
   - twingate
   - mysql
   - adminer
-  # - pihole
+  - pihole
   # - jenkins
   # - jellyfin

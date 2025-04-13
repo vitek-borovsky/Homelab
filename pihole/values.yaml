@@ -56,33 +56,7 @@ serviceDns:
 
 # -- Configuration for the DHCP service on port 67
 serviceDhcp:
-  # -- Generate a Service resource for DHCP traffic
   enabled: false
-
-  # -- `spec.type` for the DHCP Service
-  type: NodePort
-
-  # -- The port of the DHCP service
-  port: 67
-
-  # -- Optional node port for the DHCP service
-  nodePort: ""
-
-  # -- `spec.externalTrafficPolicy` for the DHCP Service
-  externalTrafficPolicy: Local
-
-  # -- A fixed `spec.loadBalancerIP` for the DHCP Service
-  loadBalancerIP: ""
-  # -- A fixed `spec.loadBalancerIP` for the IPv6 DHCP Service
-  loadBalancerIPv6: ""
-
-  # -- Annotations for the DHCP service
-  annotations: {}
-    # metallb.universe.tf/address-pool: network-services
-    # metallb.universe.tf/allow-shared-ip: pihole-svc
-  # -- Labels for the DHCP service
-  extraLabels:
-    {}
 
 # -- Configuration for the web interface service
 serviceWeb:
@@ -96,11 +70,6 @@ serviceWeb:
 
   # -- `spec.externalTrafficPolicy` for the web interface Service
   externalTrafficPolicy: Local
-
-  # -- A fixed `spec.loadBalancerIP` for the web interface Service
-  loadBalancerIP: ""
-  # -- A fixed `spec.loadBalancerIP` for the IPv6 web interface Service
-  loadBalancerIPv6: ""
 
   # -- Annotations for the DHCP service
   annotations: {}
@@ -336,10 +305,13 @@ dnsmasq:
   #   - cname=cname record,dns record
 
 # -- list of adlists to import during initial start of the container
-adlists: {}
-  # If you want to provide blocklists, add them here.
-  # - https://hosts-file.net/grm.txt
-  # - https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts
+adlists:
+  - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  - https://dbl.oisd.nl/
+  - https://mirror1.malwaredomains.com/files/justdomains
+  - https://pi-hole-lists.ceskydj.cz/risk-eshops
+  - https://raw.githubusercontent.com/tomasko126/easylistczechandslovak/master/filters.txt
+
 
 # -- list of whitelisted domains to import during initial start of the container
 whitelist: {}

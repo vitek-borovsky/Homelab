@@ -1182,7 +1182,7 @@ tcp: {}
 ## Ref: https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/exposing-tcp-udp-services.md
 ##
 udp:
-  "53": "homelab/pihole-dns-udp:53"
+  "53": "homelab/pihole-dns:53"
 
 # -- Prefix for TCP and UDP ports names in ingress controller service
 ## Some cloud providers, like Yandex Cloud may have a requirements for a port name regex to support cloud load balancer integration
