@@ -8,7 +8,7 @@
     - Prometheus:
         href: http://prometheus.homelab/
         icon: prometheus.svg
-        siteMonitor: http://lgtm-mimir-nginx.homelab.svc.cluster.local
+        siteMonitor: http://prometheus-server.homelab.svc.cluster.local
 
     - Adminer:
         href: http://adminer.homelab/
