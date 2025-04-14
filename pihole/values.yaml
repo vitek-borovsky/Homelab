@@ -348,10 +348,10 @@ webHttps: "443"
 hostname: ""
 
 # -- should the container use host network
-hostNetwork: "true"
+hostNetwork: "false"
 
 # -- should container run in privileged mode
-privileged: "true"
+privileged: "false"
 
 # linux capabilities container should run with
 capabilities: {}
