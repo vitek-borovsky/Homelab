@@ -25,4 +25,5 @@ helmCharts:
     valuesFile: prom-values.yaml
 
 resources:
+  - grafana-pv.yaml
   - prom-pv.yaml
