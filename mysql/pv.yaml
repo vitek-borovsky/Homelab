@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   name: mysql-data-pv
   labels:
-    app: mysql
+    from: mysql
     type: data
 spec:
   volumeMode: Filesystem
@@ -31,7 +31,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: mysql
+      from: mysql
       type: data
   volumeMode: Filesystem
   accessModes:
