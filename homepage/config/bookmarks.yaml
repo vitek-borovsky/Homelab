@@ -18,6 +18,10 @@
           href: https://github.com/
 
 - Network:
-    - Router:
+    - My-Router:
         - abbr: MI
           href: http://miwifi.com/
+
+    - Main-Router:
+        - abbr: TP
+          href: http://tplinkwifi.com/
