@@ -2,10 +2,11 @@
 
 pkgs.mkShell {
   buildInputs = with pkgs; [
-    minikube
     kubernetes-helm
-    helmfile
     kustomize
+
+    terraform
+    terragrunt
 
   ];
 
