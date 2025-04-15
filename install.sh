@@ -6,6 +6,9 @@ set -eu
 kustomize build --enable-helm ingress/ | \
     kubectl apply -f -
 
+kustomize build --enable-helm twingate/ | \
+    kubectl apply -f -
+
 
 kustomize build --enable-helm . | \
     kubectl apply -f -

@@ -14,9 +14,9 @@ resources:
   - lgtm
   - rss
   - nextcloud
-  - twingate
   - mysql
   - adminer
   - pihole
+  # - twingate
   # - jenkins
   # - jellyfin

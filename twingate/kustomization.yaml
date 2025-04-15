@@ -17,3 +17,6 @@ helmCharts:
     name: connector
     repo: https://twingate.github.io/helm-charts
     valuesFile: values.yaml
+
+resources:
+  - namespace.yaml
