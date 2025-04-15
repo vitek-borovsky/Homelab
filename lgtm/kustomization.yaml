@@ -25,4 +25,4 @@ helmCharts:
     valuesFile: prom-values.yaml
 
 resources:
-  - pv.yaml
+  - prom-pv.yaml
