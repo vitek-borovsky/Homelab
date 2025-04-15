@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   name: pihole-data-pv
   labels:
-    app: pihole
+    from: pihole
     type: data
 spec:
   volumeMode: Filesystem
@@ -31,7 +31,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: pihole
+      from: pihole
       type: data
   volumeMode: Filesystem
   accessModes:
