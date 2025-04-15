@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   name: freshrss-config-pv
   labels:
-    app: freshrss
+    from: freshrss
     type: config
 spec:
   volumeMode: Filesystem
@@ -31,7 +31,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: freshrss
+      from: freshrss
       type: config
   volumeMode: Filesystem
   accessModes:
