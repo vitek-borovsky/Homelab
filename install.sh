@@ -19,10 +19,8 @@ install twingate
 install homepage
 install monitoring
 
-# TODO this fails because test-connection pod that I can't disable
-install adminer ||:
-# TODO this fails because smoketest pod that I can't disable
-install pihole ||:
+install adminer
+install pihole
 
 install mysql
 

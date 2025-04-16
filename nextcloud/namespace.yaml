@@ -2,13 +2,3 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: nextcloud
----
-apiVersion: v1
-kind: ResourceQuota
-metadata:
-  name: namespace-limits
-  namespace: nextcloud
-spec:
-  hard:
-    limits.cpu: "1"
-    limits.memory: "4Gi"

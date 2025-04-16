@@ -2,13 +2,3 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: n8n
----
-apiVersion: v1
-kind: ResourceQuota
-metadata:
-  name: namespace-limits
-  namespace: n8n
-spec:
-  hard:
-    limits.cpu: "1"
-    limits.memory: "4Gi"

@@ -2,13 +2,3 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: jenkins
----
-apiVersion: v1
-kind: ResourceQuota
-metadata:
-  name: namespace-limits
-  namespace: jenkins
-spec:
-  hard:
-    limits.cpu: "1"
-    limits.memory: "4Gi"
