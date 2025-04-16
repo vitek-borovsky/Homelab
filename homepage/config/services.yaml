@@ -3,17 +3,17 @@
         href: http://grafana.homelab/
         description: Homepage is awesome
         icon: grafana.svg
-        siteMonitor: lgtm-grafana.monitoring.svc.cluster.local
+        siteMonitor: http://lgtm-grafana.monitoring.svc.cluster.local
 
     - Prometheus:
         href: http://prometheus.homelab/
         icon: prometheus.svg
-        siteMonitor: prometheus-server.monitoring.svc.cluster.local
+        siteMonitor: http://prometheus-server.monitoring.svc.cluster.local
 
     - Adminer:
         href: http://adminer.homelab/
         icon: adminer.svg
-        siteMonitor: adminer.adminer.svc.cluster.local
+        siteMonitor: http://adminer.adminer.svc.cluster.local
 
 
 - Services:
@@ -21,35 +21,35 @@
         href: http://nextcloud.homelab/login
         description: Homepage is the best
         icon: nextcloud.svg
-        siteMonitor: nextcloud.nextcloud.svc.cluster.local
+        siteMonitor: http://nextcloud.nextcloud.svc.cluster.local
 
     - Jenkins:
         href: http://jenkins.homelab/login
         icon: jenkins.svg
-        siteMonitor: jenkins.jenkins.svc.cluster.local:8080
+        siteMonitor: http://jenkins.jenkins.svc.cluster.local:8080
 
     - Pihole:
         href: http://pihole.homelab/admin/login
         icon: pi-hole.svg
-        siteMonitor: pihole-web.pihole.svc.cluster.local
+        siteMonitor: http://pihole-web.pihole.svc.cluster.local
 
     - Jellyfin:
         href: http://jellyfin.homelab
         icon: jellyfin.svg
-        siteMonitor: jellyfin.jellyfin.svc.cluster.local
+        siteMonitor: http://jellyfin.jellyfin.svc.cluster.local
 - Rss:
     - Five Filters:
         href: http://fivefilters.homelab
         icon: rsshub.png # TODO bad icon
-        siteMonitor: fivefilters.rss.svc.cluster.local
+        siteMonitor: http://fivefilters.rss.svc.cluster.local
 
     - Fresh RSS:
         href: http://freshrss.homelab
         icon: freshrss.svg
-        siteMonitor: freshrss.rss.svc.cluster.local
+        siteMonitor: http://freshrss.rss.svc.cluster.local
 
 - Automation:
     - N8n:
         href: http://n8n.homelab
         icon: n8n.svg
-        siteMonitor: n8n.n8n.svc.cluster.local
+        siteMonitor: http://n8n.n8n.svc.cluster.local
