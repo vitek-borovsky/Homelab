@@ -106,9 +106,9 @@ binaryData:
 # -- n8n database configurations
 db:
   # -- Prefix to use for table names.
-  tablePrefix: ""
+  tablePrefix: n8n
   # -- Type of database to use. Valid values 'sqlite' | 'postgresdb'
-  type: sqlite
+  type: postgresdb
 
   logging:
     # -- Whether database logging is enabled.
@@ -117,14 +117,6 @@ db:
     options: error
     # -- Only queries that exceed this time (ms) will be logged. Set `0` to disable.
     maxQueryExecutionTime: 0
-
-  sqlite:
-    # -- SQLite database file name
-    database: "database.sqlite"
-    # -- SQLite database pool size. Set to `0` to disable pooling.
-    poolSize: 0
-    # -- Runs VACUUM operation on startup to rebuild the database. Reduces file size and optimizes indexes. This is a long running blocking operation and increases start-up time.
-    vacuum: false
 
 sentry:
   # -- Whether sentry is enabled.
