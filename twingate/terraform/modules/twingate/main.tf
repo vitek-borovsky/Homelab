@@ -58,6 +58,9 @@ variable "instances" {
     "nextcloud" = {
       ports_tcp     = [ "80" ]
     },
+    "n8n" = {
+      ports_tcp     = [ "80" ]
+    },
   }
 }
 locals {
