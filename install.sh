@@ -23,6 +23,7 @@ install adminer
 install pihole
 
 install mysql
+install postgresql
 
 
 install rss
