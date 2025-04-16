@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: twingate
+  name: homeapage
 ---
 apiVersion: v1
 kind: ResourceQuota

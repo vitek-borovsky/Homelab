@@ -3,12 +3,38 @@ cd $(dirname $0)
 
 set -eu
 
-kustomize build --enable-helm ingress/ | \
-    kubectl apply -f -
+install() {
+    kustomize build --enable-helm $1/ | \
+        kubectl apply -f -
+}
 
-kustomize build --enable-helm twingate/ | \
-    kubectl apply -f -
+kubectl apply -f storage-class.yaml
+
+install ingress
+
+# TODO wait until ingress controller is ready
+
+install twingate
+
+install homepage
+install monitoring
+
+# TODO this fails because test-connection pod that I can't disable
+install adminer ||:
+# TODO this fails because smoketest pod that I can't disable
+install pihole ||:
+
+install mysql
 
 
-kustomize build --enable-helm . | \
-    kubectl apply -f -
+install rss
+
+install nextcloud
+
+# install jellyfin
+
+# install jenkins
+
+install n8n
+
+# install speedtest

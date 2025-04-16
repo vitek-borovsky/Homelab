@@ -3,17 +3,17 @@
         href: http://grafana.homelab/
         description: Homepage is awesome
         icon: grafana.svg
-        siteMonitor: http://lgtm-grafana.homelab.svc.cluster.local
+        siteMonitor: lgtm-grafana.monitoring.svc.cluster.local
 
     - Prometheus:
         href: http://prometheus.homelab/
         icon: prometheus.svg
-        siteMonitor: http://prometheus-server.homelab.svc.cluster.local
+        siteMonitor: prometheus-server.monitoring.svc.cluster.local
 
     - Adminer:
         href: http://adminer.homelab/
         icon: adminer.svg
-        siteMonitor: http://adminer.homelab.svc.cluster.local
+        siteMonitor: adminer.adminer.svc.cluster.local
 
 
 - Services:
@@ -21,29 +21,29 @@
         href: http://nextcloud.homelab/login
         description: Homepage is the best
         icon: nextcloud.svg
-        siteMonitor: http://nextcloud.homelab.svc.cluster.local
+        siteMonitor: nextcloud.nextcloud.svc.cluster.local
 
     - Jenkins:
         href: http://jenkins.homelab/login
         icon: jenkins.svg
-        siteMonitor: http://jenkins.homelab.svc.cluster.local:8080
+        siteMonitor: jenkins.jenkins.svc.cluster.local:8080
 
     - Pihole:
         href: http://pihole.homelab/admin/login
         icon: pi-hole.svg
-        siteMonitor: http://pihole-web.homelab.svc.cluster.local
+        siteMonitor: pihole-web.pihole.svc.cluster.local
 
     - Jellyfin:
         href: http://jellyfin.homelab
         icon: jellyfin.svg
-        siteMonitor: http://jellyfin.homelab.svc.cluster.local
+        siteMonitor: jellyfin.jellyfin.svc.cluster.local
 - Rss:
     - Five Filters:
         href: http://fivefilters.homelab
         icon: rsshub.png # TODO bad icon
-        siteMonitor: http://fivefilters.homelab.svc.cluster.local
+        siteMonitor: fivefilters.rss.svc.cluster.local
 
     - Fresh RSS:
         href: http://freshrss.homelab
         icon: freshrss.svg
-        siteMonitor: http://freshrss.homelab.svc.cluster.local
+        siteMonitor: freshrss.rss.svc.cluster.local

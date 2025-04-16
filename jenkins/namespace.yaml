@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: twingate
+  name: jenkins
 ---
 apiVersion: v1
 kind: ResourceQuota
 metadata:
   name: namespace-limits
-  namespace: homeapage
+  namespace: jenkins
 spec:
   hard:
     limits.cpu: "1"

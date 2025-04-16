@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: homelab
+namespace: monitoring
 
 labels:
   - includeSelectors: true
@@ -25,5 +25,6 @@ helmCharts:
     valuesFile: prom-values.yaml
 
 resources:
+  - namespace.yaml
   - grafana-pv.yaml
   - prom-pv.yaml
