@@ -47,3 +47,9 @@
         href: http://freshrss.homelab
         icon: freshrss.svg
         siteMonitor: freshrss.rss.svc.cluster.local
+
+- Automation:
+    - Fresh RSS:
+        href: http://n8n.homelab
+        icon: n8n.svg
+        siteMonitor: n8n.n8n.svc.cluster.local
