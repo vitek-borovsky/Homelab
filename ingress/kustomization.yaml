@@ -7,8 +7,6 @@ labels:
     pairs:
       app: ingress
 
-configMapGenerator:
-
 
 helmCharts:
   - releaseName: nginx
@@ -16,6 +14,6 @@ helmCharts:
     repo: https://kubernetes.github.io/ingress-nginx
     valuesFile: values.yaml
 
-resources:
-  - tcp-services.yaml
-  - udp-services.yaml
+# resources:
+#   - tcp-services.yaml
+#   - udp-services.yaml
