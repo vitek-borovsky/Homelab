@@ -472,7 +472,7 @@ controller:
       # Auto-reload uses the http://<jenkins_url>/reload-configuration-as-code endpoint to reapply config when changes to
       # the configScripts are detected.
       # -- Enables Jenkins Config as Code auto-reload
-      enabled: true
+      enabled: false
       image:
         # -- Registry for the image that triggers the reload
         registry: docker.io
