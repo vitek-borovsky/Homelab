@@ -32,8 +32,10 @@ install nextcloud
 
 # install jellyfin
 
-# install jenkins
+install jenkins
 
 install n8n
 
 # install speedtest
+
+install ollama

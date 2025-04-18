@@ -308,13 +308,13 @@ server:
   ##
   alertmanagers: []
 
-  resources: {}
-    # limits:
-    #   cpu: 500m
-    #   memory: 512Mi
-    # requests:
-    #   cpu: 500m
-    #   memory: 512Mi
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
 
   # Use hostPort
   # hostPort: 9090
