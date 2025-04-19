@@ -409,7 +409,7 @@ primary:
   resources:
     requests:
       cpu: 10m
-      memory: 512Mi
+      memory: 256Mi
     limits:
       cpu: 1
       memory: 1Gi
