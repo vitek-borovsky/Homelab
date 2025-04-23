@@ -7,3 +7,5 @@ export TF_VAR_cluster_ip=
 
 export TF_VAR_user_group_id=
 export TF_VAR_domain=
+
+export TF_VAR_ssh_port=

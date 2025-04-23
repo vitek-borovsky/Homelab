@@ -33,3 +33,9 @@ variable "domain" {
   type        = string
   sensitive   = true
 }
+
+variable "ssh_port" {
+  description = "ssh_port"
+  type        = string
+  sensitive   = true
+}

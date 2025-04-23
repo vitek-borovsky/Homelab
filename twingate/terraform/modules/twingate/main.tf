@@ -21,59 +21,42 @@ data "twingate_group" "user" {
     id = var.user_group_id
 }
 
-variable "instances" {
-  type = map(object({
-    alias           = optional(string)
-    ports_tcp       = optional(list(string))
-    ports_udp       = optional(list(string))
-  }))
-
-  # To create new resource edit here
-  default = {
-    "ssh" = {
-      ports_tcp     = [ "22" ]
-      alias         = "pi"
-    },
-    "homepage" = {
-      ports_tcp     = [ "80" ]
-    },
-    "fivefilters" = {
-      ports_tcp     = [ "80" ]
-    },
-    "freshrss" = {
-      ports_tcp     = [ "80" ]
-    },
-    "grafana" = {
-      ports_tcp     = [ "80" ]
-    },
-    "prometheus" = {
-      ports_tcp     = [ "80" ]
-    },
-    "pihole" = {
-      ports_tcp     = [ "80" ]
-    },
-    "adminer" = {
-      ports_tcp     = [ "80" ]
-    },
-    "nextcloud" = {
-      ports_tcp     = [ "80" ]
-    },
-    "n8n" = {
-      ports_tcp     = [ "80" ]
-    },
-  }
-}
 locals {
+  default_port_80_instances = [
+    "homepage",
+    "fivefilters",
+    "freshrss",
+    "grafana",
+    "prometheus",
+    "pihole",
+    "adminer",
+    "nextcloud",
+    "n8n"
+  ]
+
+  instances = merge(
+    {
+      ssh = {
+        ports_tcp = [var.ssh_port]
+        alias     = "pi"
+      }
+    },
+    {
+      for name in local.default_port_80_instances :
+      name => {
+        ports_tcp = ["80"]
+      }
+    }
+  )
+
   resources = {
-    for k, v in var.instances :
-    k => {
-      name  = k
-      alias = coalesce(v.alias, k)
-      ports_tcp = coalesce(v.ports_tcp, [])
-      ports_udp = coalesce(v.ports_udp, [])
-      # TODO DRY this
-      policy_tcp = length(coalesce(v.ports_tcp, [])) == 0 ? "DENY_ALL" : "RESTRICTED"
-      policy_udp = length(coalesce(v.ports_udp, [])) == 0 ? "DENY_ALL" : "RESTRICTED"
+    for k, v in local.instances : k => {
+      name        = k
+      alias       = try(v.alias, k)
+      ports_tcp   = try(v.ports_tcp, [])
+      ports_udp   = try(v.ports_udp, [])
+      policy_tcp  = length(try(v.ports_tcp, [])) == 0 ? "DENY_ALL" : "RESTRICTED"
+      policy_udp  = length(try(v.ports_udp, [])) == 0 ? "DENY_ALL" : "RESTRICTED"
     }
   }
 }
