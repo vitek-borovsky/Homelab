@@ -11,6 +11,9 @@ secretGenerator:
   - name: nextcloud-credentials
     envs:
       - credentials.env
+  - name: db-credentials
+    envs:
+      - db-credentials.env
 
 helmCharts:
   - releaseName: nextcloud

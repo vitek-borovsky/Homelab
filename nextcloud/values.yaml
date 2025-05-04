@@ -102,9 +102,9 @@ nextcloud:
     usernameKey: username
     passwordKey: password
     tokenKey: ""
-    smtpUsernameKey: smtp-username
-    smtpPasswordKey: smtp-password
-    smtpHostKey: smtp-host
+    # smtpUsernameKey: smtp-username
+    # smtpPasswordKey: smtp-password
+    # smtpHostKey: smtp-host
   update: 0
   # If web server is not binding default port, you can define it
   containerPort: 80
@@ -116,17 +116,6 @@ nextcloud:
   ## SMTP configuration
   mail:
     enabled: false
-    # the user we send email as
-    fromAddress: user
-    # the domain we send email from
-    domain: domain.com
-    smtp:
-      host: domain.com
-      secure: ssl
-      port: 465
-      authtype: LOGIN
-      name: user
-      password: pass
   ## Primary ObjectStore options
   # see: https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/primary_storage.html#configuring-object-storage-as-primary-storage
 
@@ -272,269 +261,50 @@ nextcloud:
 
 
 nginx:
-  ## You need to set an fpm version of the image for nextcloud if you want to use nginx!
   enabled: false
 
-  image:
-    repository: nginx
-    tag: alpine
-    pullPolicy: IfNotPresent
-
-  containerPort: 80
-  # This configures nginx to listen on either IPv4, IPv6 or both
-  ipFamilies:
-    - IPv4
-    # - IPv6
-  config:
-    # This generates the default nginx config as per the nextcloud documentation
-    default: true
-    headers:
-      # -- HSTS settings
-      # WARNING: Only add the preload option once you read about
-      # the consequences in https://hstspreload.org/. This option
-      # will add the domain to a hardcoded list that is shipped
-      # in all major browsers and getting removed from this list
-      # could take several months.
-      # Example:
-      # "Strict-Transport-Security": "max-age=15768000; includeSubDomains; preload;"
-      "Strict-Transport-Security": ""
-      "Referrer-Policy": "no-referrer"
-      "X-Content-Type-Options": "nosniff"
-      "X-Download-Options": "noopen"
-      "X-Frame-Options": "SAMEORIGIN"
-      "X-Permitted-Cross-Domain-Policies": "none"
-      "X-Robots-Tag": "noindex, nofollow"
-      "X-XSS-Protection": "1; mode=block"
-
-    custom:
-    # custom: |-
-    #     worker_processes  1;..
-
-  resources: {}
-
-  # Set nginx container securityContext parameters. For example, you may need to define runAsNonRoot directive
-  securityContext: {}
-  # the nginx alpine container default user is 82
-  #   runAsUser: 82
-  #   runAsGroup: 33
-  #   runAsNonRoot: true
-  #   readOnlyRootFilesystem: true
-
-  ## Extra environment variables
-  extraEnv: []
-  #  - name: SOME_ENV
-  #    value: ENV_VALUE
-
 internalDatabase:
-  enabled: true
+  enabled: false
   name: nextcloud
 
 ##
 ## External database configuration
 ##
 externalDatabase:
-  enabled: false
+  enabled: true
 
   ## Supported database engines: mysql or postgresql
-  type: mysql
+  type: postgresql
 
   ## Database host. You can optionally include a colon delimited port like "myhost:1234"
-  host: ""
+  host: "postgresql-hl.dasdb.svc.cluster.local"
 
   ## Database user
   user: nextcloud
 
-  ## Database password
-  password: ""
-
-  ## Database name
-  database: nextcloud
-
   ## Use a existing secret
   existingSecret:
-    enabled: false
-    # secretName: nameofsecret
-    usernameKey: db-username
-    passwordKey: db-password
+    enabled: true
+    secretName: db-credentials
+    usernameKey: username
+    passwordKey: password
     # hostKey: db-hostname-or-ip
     # databaseKey: db-name
 
-##
-## MariaDB chart configuration
-## ref: https://github.com/bitnami/charts/tree/main/bitnami/mariadb
-##
 mariadb:
-  ## Whether to deploy a mariadb server from the bitnami mariab db helm chart
-  # to satisfy the applications database requirements. if you want to deploy this bitnami mariadb, set this and externalDatabase to true
-  # To use an ALREADY DEPLOYED mariadb database, set this to false and configure the externalDatabase parameters
   enabled: false
 
-  # see: https://github.com/bitnami/charts/tree/main/bitnami/mariadb#global-parameters
-  global:
-    # overwrites the primary.persistence.storageClass value
-    defaultStorageClass: ""
-
-  auth:
-    database: nextcloud
-    username: nextcloud
-    password: changeme
-    # Use existing secret (auth.rootPassword, auth.password, and auth.replicationPassword will be ignored).
-    # secret must contain the keys mariadb-root-password, mariadb-replication-password and mariadb-password
-    existingSecret: ""
-
-  architecture: standalone
-
-  ## Enable persistence using Persistent Volume Claims
-  ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
-  ##
-  primary:
-    persistence:
-      enabled: false
-      # Use an existing Persistent Volume Claim (must be created ahead of time)
-      existingClaim: ""
-      storageClass: ""
-      accessMode: ReadWriteOnce
-      size: 8Gi
-
-##
-## PostgreSQL chart configuration
-## for more options see https://github.com/bitnami/charts/tree/main/bitnami/postgresql
-##
 postgresql:
   enabled: false
-  global:
-    postgresql:
-      # global.postgresql.auth overrides postgresql.auth
-      auth:
-        username: nextcloud
-        password: changeme
-        database: nextcloud
-        # Name of existing secret to use for PostgreSQL credentials.
-        # auth.postgresPassword, auth.password, and auth.replicationPassword will be ignored and picked up from this secret.
-        # secret might also contains the key ldap-password if LDAP is enabled.
-        # ldap.bind_password will be ignored and picked from this secret in this case.
-        existingSecret: ""
-        # Names of keys in existing secret to use for PostgreSQL credentials
-        secretKeys:
-          adminPasswordKey: ""
-          userPasswordKey: ""
-          replicationPasswordKey: ""
-  primary:
-    persistence:
-      enabled: false
-      # Use an existing Persistent Volume Claim (must be created ahead of time)
-      # existingClaim: ""
-      # storageClass: ""
-
-##
-## Redis chart configuration
-## for more options see https://github.com/bitnami/charts/tree/main/bitnami/redis
-##
 
 redis:
   enabled: false
-  auth:
-    enabled: true
-    password: 'changeme'
-    # name of an existing secret with Redis® credentials (instead of auth.password), must be created ahead of time
-    existingSecret: ""
-    # Password key to be retrieved from existing secret
-    existingSecretPasswordKey: ""
-  # Since Redis is used for caching only, you might want to use a storageClass with different reclaim policy and backup settings
-  global:
-    storageClass: ""
-  master:
-    persistence:
-      enabled: true
-  replica:
-    persistence:
-      enabled: true
 
-##
-## Collabora chart configuration
-## for more options see https://github.com/CollaboraOnline/online/tree/master/kubernetes/helm/collabora-online
-##
 collabora:
   enabled: false
 
-  autoscaling:
-    # enable autocaling, please check collabora README.md first
-    enabled: false
-
-  collabora:
-    ## HTTPS nextcloud domain, if needed
-    aliasgroups: []
-    #   - host: "https://nextcloud.domain:443"
-
-    # set extra parameters for collabora
-    # you may need to add --o:ssl.termination=true
-    extra_params: --o:ssl.enable=false
-
-    ## Specify server_name when the hostname is not reachable directly for
-    # example behind reverse-proxy. example: collabora.domain
-    server_name: null
-
-    existingSecret:
-      # set to true to to get collabora admin credentials from an existin secret
-      # if set, ignores collabora.collabora.username and password
-      enabled: false
-      # name of existing Kubernetes Secret with collboara admin credentials
-      secretName: ""
-      usernameKey: "username"
-      passwordKey: "password"
-
-    # setup admin login credentials, these are ignored if
-    # collabora.collabora.existingSecret.enabled=true
-    password: examplepass
-    username: admin
-
-  # setup ingress
-  ingress:
-    # enable ingress for collabora online
-    enabled: false
-    className: ""
-    # please check collabora values.yaml for nginx/haproxy annotations examples
-    annotations: {}
-    hosts:
-      - host: chart-example.local
-        paths:
-        - path: /
-          pathType: ImplementationSpecific
-    tls: []
-    #  - secretName: collabora-ingress-tls
-    #    hosts:
-    #      - collabora.domain
-
-  # see collabora helm README.md for recommended values
-  resources: {}
-
-
-## Cronjob to execute Nextcloud background tasks
-## ref: https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/background_jobs_configuration.html#cron
-##
 cronjob:
   enabled: false
-
-  ## Cronjob sidecar resource requests and limits
-  ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
-  ##
-  resources: {}
-
-  # Allow configuration of lifecycle hooks
-  # ref: https://kubernetes.io/docs/tasks/configure-pod-container/attach-handler-lifecycle-event/
-  lifecycle: {}
-    # postStartCommand: []
-    # preStopCommand: []
-  # Set securityContext parameters. For example, you may need to define runAsNonRoot directive
-  securityContext: {}
-  #   runAsUser: 33
-  #   runAsGroup: 33
-  #   runAsNonRoot: true
-  #   readOnlyRootFilesystem: true
-
-  # The command the cronjob container executes.
-  command:
-  - /cron.sh
 
 service:
   type: ClusterIP
@@ -618,9 +388,6 @@ startupProbe:
 ##
 hpa:
   enabled: false
-  cputhreshold: 60
-  minPods: 1
-  maxPods: 10
 
 nodeSelector: {}
 

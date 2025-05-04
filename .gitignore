@@ -5,3 +5,5 @@ charts/
 *.env
 *.jpg
 *.png
+
+anki-sync/Anki2

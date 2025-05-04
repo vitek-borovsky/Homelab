@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: das-db-data-pv
+  labels:
+    from: das-db
+    type: data
+spec:
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - homelab
+  capacity:
+    storage: 10Ti
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/das/das-db/data
+  storageClassName: local-persistent
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: das-db-data-pvc
+spec:
+  selector:
+    matchLabels:
+      from: das-db
+      type: data
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Ti
+  storageClassName: local-persistent
