@@ -28,7 +28,7 @@ install postgresql
 
 install rss
 
-install nextcloud
+# install nextcloud
 
 # install jellyfin
 
