@@ -276,19 +276,13 @@ externalDatabase:
   ## Supported database engines: mysql or postgresql
   type: postgresql
 
-  ## Database host. You can optionally include a colon delimited port like "myhost:1234"
-  host: "postgresql-hl.dasdb.svc.cluster.local"
-
-  ## Database user
-  user: nextcloud
-
   ## Use a existing secret
   existingSecret:
     enabled: true
     secretName: db-credentials
     usernameKey: username
     passwordKey: password
-    # hostKey: db-hostname-or-ip
+    hostKey: hostname
     # databaseKey: db-name
 
 mariadb:
