@@ -15,11 +15,7 @@ secretGenerator:
     envs:
       - db-credentials.env
 
-helmCharts:
-  - releaseName: nextcloud
-    name: nextcloud
-    repo: https://nextcloud.github.io/helm/
-    valuesFile: values.yaml
-
 resources:
   - namespace.yaml
+  - deployment.yaml
+  - ingress.yaml
