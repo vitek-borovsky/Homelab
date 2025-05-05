@@ -20,6 +20,14 @@ spec:
         ports:
         - containerPort: 80
           name: nextcloud-web
+        volumeMounts:
+          - mountPath: /var/www/
+            name: nextcloud-config
+            subPath: .
+      volumes:
+        - name: nextcloud-config
+          persistentVolumeClaim:
+            claimName: nextcloud-config
 ---
 apiVersion: v1
 kind: Service

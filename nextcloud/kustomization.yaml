@@ -17,5 +17,6 @@ secretGenerator:
 
 resources:
   - namespace.yaml
+  - pv.yaml
   - deployment.yaml
   - ingress.yaml
