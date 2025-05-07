@@ -22,7 +22,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /mnt/das/nextcloud/
+    path: /mnt/das/nextcloud/html
   storageClassName: local-persistent
 ---
 apiVersion: v1

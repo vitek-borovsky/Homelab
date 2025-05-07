@@ -21,7 +21,7 @@ spec:
         - containerPort: 80
           name: nextcloud-web
         volumeMounts:
-          - mountPath: /var/www/
+          - mountPath: /var/www/html
             name: nextcloud-config
             subPath: .
       volumes:
