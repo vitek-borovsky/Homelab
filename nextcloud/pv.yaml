@@ -18,7 +18,7 @@ spec:
               values:
                 - homelab
   capacity:
-    storage: 10Gi
+    storage: 10Ti
   accessModes:
     - ReadWriteOnce
   hostPath:
@@ -39,5 +39,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 10Ti
   storageClassName: local-persistent
