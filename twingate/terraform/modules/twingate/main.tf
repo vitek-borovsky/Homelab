@@ -30,7 +30,6 @@ locals {
     "prometheus",
     "pihole",
     "adminer",
-    "nextcloud",
     "n8n"
   ]
 
