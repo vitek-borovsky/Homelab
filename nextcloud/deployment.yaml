@@ -20,6 +20,11 @@ spec:
         ports:
         - containerPort: 80
           name: nextcloud-web
+        env:
+          - name: PHP_UPLOAD_LIMIT
+            value: 16G
+          - name: PHP_MEMORY_LIMIT
+            value: 4G
         volumeMounts:
           - mountPath: /var/www/html
             name: nextcloud-config
