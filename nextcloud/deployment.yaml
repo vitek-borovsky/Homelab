@@ -24,7 +24,7 @@ spec:
           - name: PHP_UPLOAD_LIMIT
             value: 256G
           - name: PHP_MEMORY_LIMIT
-            value: 4G
+            value: 8G
         volumeMounts:
           - mountPath: /var/www/html
             name: nextcloud-config
