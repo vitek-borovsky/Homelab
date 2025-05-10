@@ -22,7 +22,7 @@ spec:
           name: nextcloud-web
         env:
           - name: PHP_UPLOAD_LIMIT
-            value: 16G
+            value: 256G
           - name: PHP_MEMORY_LIMIT
             value: 4G
         volumeMounts:
