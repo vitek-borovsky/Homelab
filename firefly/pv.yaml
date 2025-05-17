@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: firefly-data-pv
+  labels:
+    from: firefly
+    type: data
+spec:
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - homelab
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/homelab/firefly/data
+  storageClassName: local-persistent
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: firefly-data-pvc
+spec:
+  selector:
+    matchLabels:
+      from: firefly
+      type: data
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: local-persistent
