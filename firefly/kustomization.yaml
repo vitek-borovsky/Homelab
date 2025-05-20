@@ -11,12 +11,20 @@ secretGenerator:
   - name: firefly-credentials
     envs:
       - credentials.env
+  - name: importer-token
+    envs:
+      - importer-token.env
 
 helmCharts:
   - releaseName: firefly
     name: firefly-iii
     repo: https://firefly-iii.github.io/kubernetes
     valuesFile: values.yaml
+
+  - releaseName: firefly-importer
+    name: importer
+    repo: https://firefly-iii.github.io/kubernetes
+    valuesFile: importer-values.yaml
 
 resources:
   - namespace.yaml
