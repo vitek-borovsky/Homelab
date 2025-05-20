@@ -37,6 +37,11 @@
         href: http://jellyfin.homelab
         icon: jellyfin.svg
         siteMonitor: http://jellyfin.jellyfin.svc.cluster.local
+
+    - Firefly:
+        href: http://firefly.homelab
+        icon: firefly.svg
+        siteMonitor: http://firefly-firefly-iii.firefly.svc.cluster.local
 - Rss:
     - Five Filters:
         href: http://fivefilters.homelab

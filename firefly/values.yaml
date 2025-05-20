@@ -19,7 +19,7 @@ persistence:
   accessModes: ReadWriteOnce
   storage: 1Gi
   # -- If you want to use an existing claim, set it here
-  existingClaim: "firefly-data-pv"
+  existingClaim: "firefly-data-pvc"
 
 # -- Environment variables for Firefly III. See docs at: https://github.com/firefly-iii/firefly-iii/blob/main/.env.example
 config:
@@ -28,8 +28,8 @@ config:
 
   # -- Directly defined environment variables. Use this for non-secret configuration values.
   env:
-    DB_HOST: "postgersql-hl.postgresql.svc.cluster.local"
-    # DB_CONNECTION: pgsql
+    DB_HOST: "postgresql-hl.postgresql.svc.cluster.local"
+    DB_CONNECTION: pgsql
     # DB_PORT: "5432"
     DB_DATABASE: firefly
     DB_USERNAME: firefly
