@@ -108,8 +108,8 @@ ingress:
 # -- lines, adjust them as necessary, and remove the curly braces after 'resources:'.
 resources:
   limits:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 1000m
+    memory: 512Mi
   requests:
     cpu: 10m
     memory: 16Mi
